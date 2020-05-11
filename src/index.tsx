@@ -226,14 +226,6 @@ export default class TimeField extends React.Component<Props, State> {
       });
     }
 
-    return (
-      <input
-        type="text"
-        {...props}
-        value={value}
-        onChange={onChangeHandler}
-        style={{width: showSeconds ? 54 : 35, ...style}}
-      />
-    );
+    return <input type="text" {...props} value={value} onChange={onChangeHandler} />;
   }
 }
