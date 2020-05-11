@@ -177,4 +177,25 @@ describe('Component', () => {
     const eventA = {target: {value: 'a', selectionEnd: 1}, persist};
     expect(a.simulate('change', eventA).state('value')).toEqual('12:34');
   });
+
+  describe('Timer', () => {
+    let timer: ReactWrapper;
+    let onChangeTime: jest.Mock;
+
+    beforeEach(() => {
+      timer = mount(<TimeField value={'12:34'} onChange={onChangeTime} inputType="timer" />);
+      onChangeTime = jest.fn();
+    });
+
+    afterEach(() => {
+      if (timer) {
+        timer.unmount();
+      }
+      timer = null;
+    });
+
+    it('should validate reserved props before render', () => {
+      expect(timer.setProps({value: '30:60'}).state('value')).toEqual('30:00');
+    });
+  });
 });
