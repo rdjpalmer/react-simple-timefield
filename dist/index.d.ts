@@ -16,6 +16,7 @@ interface Props {
     onChange?: onChangeType;
     showSeconds?: boolean;
     input: ReactElement | null;
+    inputRef?: () => HTMLInputElement | null;
     colon?: string;
     style?: CSSProperties | {};
     inputType: InputType;

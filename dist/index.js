@@ -212,7 +212,7 @@ var TimeField = /** @class */ (function (_super) {
     TimeField.prototype.render = function () {
         var _this = this;
         var value = this.state.value;
-        var _a = this.props, onChange = _a.onChange, style = _a.style, showSeconds = _a.showSeconds, input = _a.input, colon = _a.colon, inputType = _a.inputType, props = __rest(_a, ["onChange", "style", "showSeconds", "input", "colon", "inputType"]); //eslint-disable-line no-unused-vars
+        var _a = this.props, onChange = _a.onChange, style = _a.style, showSeconds = _a.showSeconds, input = _a.input, colon = _a.colon, inputType = _a.inputType, inputRef = _a.inputRef, props = __rest(_a, ["onChange", "style", "showSeconds", "input", "colon", "inputType", "inputRef"]); //eslint-disable-line no-unused-vars
         var onChangeHandler = function (event) {
             return _this.onInputChange(event, function (e, v) { return onChange && onChange(e, v); });
         };
@@ -220,7 +220,7 @@ var TimeField = /** @class */ (function (_super) {
             return react_1.default.cloneElement(input, __assign(__assign({}, props), { value: value,
                 style: style, onChange: onChangeHandler }));
         }
-        return react_1.default.createElement("input", __assign({ type: "text" }, props, { value: value, onChange: onChangeHandler }));
+        return react_1.default.createElement("input", __assign({ ref: inputRef, type: "text" }, props, { value: value, onChange: onChangeHandler }));
     };
     TimeField.defaultProps = {
         showSeconds: false,
