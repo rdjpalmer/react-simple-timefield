@@ -70,11 +70,11 @@ interface Props {
   value?: string;
   onChange?: onChangeType;
   showSeconds?: boolean;
-  input: ReactElement | null;
+  input?: ReactElement | null;
   inputRef?: () => HTMLInputElement | null;
   colon?: string;
   style?: CSSProperties | {};
-  inputType: InputType;
+  inputType?: InputType;
   // Account for ...props
   [x: string]: unknown;
 }
