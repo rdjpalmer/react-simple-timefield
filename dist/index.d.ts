@@ -20,6 +20,7 @@ interface Props {
     colon?: string;
     style?: CSSProperties | {};
     inputType: InputType;
+    [x: string]: unknown;
 }
 interface State {
     value: string;

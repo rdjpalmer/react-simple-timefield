@@ -75,6 +75,8 @@ interface Props {
   colon?: string;
   style?: CSSProperties | {};
   inputType: InputType;
+  // Account for ...props
+  [x: string]: unknown;
 }
 
 interface State {
